@@ -28,12 +28,12 @@ SOURCES += \
         bullet.cpp \
         main.cpp \
         myrect.cpp \
-    enemy.cpp
+        enemy.cpp \
 
 HEADERS += \
     bullet.h \
     myrect.h \
-    enemy.h
+    enemy.h \
 
 FORMS +=
 
