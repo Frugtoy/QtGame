@@ -3,7 +3,7 @@
 #include<QObject>
 #include<QGraphicsRectItem>
 #include<QKeyEvent>
-
+#include"bullet.h"
 class MyRect : public QObject, public QGraphicsRectItem {
 Q_OBJECT
 public:

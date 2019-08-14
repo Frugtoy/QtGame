@@ -1,8 +1,5 @@
 #include "enemy.h"
-#include <QDebug>
-#include <stdlib.h>//random
-#include <QTimer>
-#include <QGraphicsScene>
+
 Enemy::Enemy(){
    //rand pos
    this->setPos(rand() % 700, 0);

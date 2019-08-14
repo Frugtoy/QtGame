@@ -1,11 +1,11 @@
 #include <QApplication>
 #include<QGraphicsScene>
-#include "myrect.h"
+#include "player.h"
 #include "bullet.h"
 #include<QGraphicsItem>
 #include<QGraphicsView>
 #include <QTimer>
-
+#include "game.h"
 /*          game dev brainstorm
 ---------------1lvl--------------------
 prerege : basic knowleges about c++ such as memory management and some basic knowleges about qtcreator
@@ -21,39 +21,12 @@ QGraphicsView
 
 
 */
-int main(int argc, char *argv[])
+Game* game;
+int main(int argc, char *argv[] )
 {
     QApplication a(argc, argv);
-
-    QGraphicsScene * scene = new QGraphicsScene();
-
-    MyRect * mainHero = new MyRect();
-
-
-    mainHero->setRect(0,0,100,100);
-    //add item 2 the scene
-    scene->addItem(mainHero);
-
-    //only one item on screen could be a focusable , so ,lets do our "main" hero focusable
-    mainHero->setFlag(QGraphicsItem::ItemIsFocusable);
-    mainHero->setFocus();
-    //add a view
-    QGraphicsView *view = new QGraphicsView();//constructor can also include a scene
-    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    view->setScene(scene);
-
-    //show the view
-    view->setFixedSize(800,600);
-    scene->setSceneRect(0,0,800,600);
-    mainHero->setPos(view->width()/2,view->height() - mainHero->rect().height());
-    view->show();
-
-    // SPAWN ENEMY
-    QTimer * timer = new QTimer();
-    QObject::connect(timer,SIGNAL(timeout()),mainHero ,SLOT(spawn()));
-    timer->start(2000);
-
-
+    game = new Game();
+    game->show();
+    delete game;
     return a.exec();
 }

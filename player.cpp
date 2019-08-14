@@ -1,9 +1,5 @@
-#include "myrect.h"
-#include "bullet.h"
-#include <QDebug>
-#include <QGraphicsScene>
-#include <QTimer>
-#include "enemy.h"
+#include "player.h"
+
 MyRect:: MyRect(){}
 void MyRect::keyPressEvent(QKeyEvent * event){
 
@@ -16,17 +12,17 @@ void MyRect::keyPressEvent(QKeyEvent * event){
         if (this->pos().x() + 100 < 800 )
         this->setPos(x()+10,y());
     }
-    /*else if( event->key() == Qt::Key_Up) {
+   /* else if( event->key() == Qt::Key_Up) {
         this->setPos(x(),y()-10);
-    }*/
-   /* else if( event->key() == Qt::Key_Down) {
+    }
+    else if( event->key() == Qt::Key_Down) {
         this->setPos(x(),y()+10);
     }*/
         else if (event->key() == Qt::Key_Space){
             //create a bullet
          Bullet* bullet = new Bullet();
         // qDebug()<<"a bullet has been created";
-         bullet->setPos(this->x()+50,this->y());
+         bullet->setPos(this->x()+45,this->y());
          this->scene()->addItem(bullet);
         }
 }
