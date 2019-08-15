@@ -25,10 +25,20 @@ Game::Game()
 
     //show our points
     this->points = new Score();
-    scene->addItem(points);
+    this->hp = new Health();
+    this->hp->SetHealthPoints(10);
+
+    this->hp->setPos(x(),y()+14);
+
+    this->scene->addItem(points);
+    this->scene->addItem(hp);
+
+
     // SPAWN ENEMY
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),mainHero ,SLOT(spawn()));
     timer->start(2000);
   }
 Game::~Game(){}
+
+

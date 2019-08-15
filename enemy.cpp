@@ -1,4 +1,6 @@
 #include "enemy.h"
+#include "game.h"
+extern Game* game;
 
 Enemy::Enemy(){
    //rand pos
@@ -19,6 +21,7 @@ void Enemy::move() {
         this->setPos(this->pos().x(),this->pos().y() + 10);
     }
     else {
+    game->hp->SetHealthPoints(game->hp->getHealthPoints()-2);
     scene()->removeItem(this);
     delete this;
     }

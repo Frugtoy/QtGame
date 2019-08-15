@@ -30,14 +30,16 @@ SOURCES += \
         player.cpp \
         enemy.cpp \
         game.cpp \
-    score.cpp
+    score.cpp \
+    health.cpp
 
 HEADERS += \
     bullet.h \
     player.h \
     enemy.h \
     game.h \
-    score.h
+    score.h \
+    health.h
 
 FORMS +=
 
